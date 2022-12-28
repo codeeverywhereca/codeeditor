@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>code everywhere JS editor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="header">
+        <span>code everywhere JS editor (22122815)</span>
+        <div class="actions">
+            <div id="compiling"></div>
+            <div id="auto-save"></div>
+            <div onclick="clearSession()" class="btn" title="(Warning: Will Delete Your Code)">Reset</div>
+            <div onclick="shareLink()" class="btn">shareLink</div>
+            <div onclick="clearOutput()" class="btn">clear</div>
+            <a href="https://github.com/codeeverywhereca/codeeditor" target="_blank">GitHub</a>
+            <a href="https://codeeverywhere.ca/post.php?id=73&title=Weekend-Project:-Online-Code-Editor" target="_blank">Blog Post</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="editor">
+
+            <div id="line-num" class="lines"></div>
+            <textarea id="code">
+/*
+	Welcome to the Code Everywhere JavaScript Editor
+	1- Code will auto run when you finish typing.
+	2- This editor is completely private, your code gets saved 
+		to sessionStorage, and no code is sent to the server.
+	3- Use "cmd + forward slash" to un/comment code.
+	4- You can share code using the "ShareLink" button, 
+		all data will be encoded into the URL.
+	5- There are bugs, this was done in a weekend.
+
+	GitHub: https://github.com/codeeverywhereca/codeeditor
+
+	Find this useful? Support the project by sending some coin
+		BTC 19u6CWTxH4cH9V2yTfAemA7gmmh7rANgiv
+*/
+
+// Use console.log to see output ..
+console.log('Hello World!')
+
+// Use #html-stage to add DOM elements ..
+document.getElementById('html-stage').innerHTML= `<h1>Hello World!</h1>`
+
+// for(..){ } / while(..){ } loops are limited to 1000 to prevent infinite loop crashing ..
+for(var x=0; x<1001; x++) {
+
+}
+
+// Function example ..
+function fizzBuzz(){
+	console.log('FizzBuzz fn()')
+	for(let x=1; x<=50; x++){
+		if(x%3==0)
+			console.log('Fizz')
+		else if(x%5==0)
+			console.log('Buzz')
+		else
+			console.log(x)
+    }
+}
+fizzBuzz()</textarea>
+            <pre id="styled"></pre>
+        </div>
+        <div class="output">
+            <h2>HTML</h2>
+            <div id="html-stage">
+                <div class="empty">div id "html-stage"</div>
+            </div>
+            <h2>Console</h2>
+            <div id="console-log">
+                <div class="empty">console.log</div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="ce-editor.js"></script>
+</body>
+</html>

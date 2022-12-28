@@ -9,10 +9,15 @@ JavaScript Online Code Editor
 - Code sharing link
 
 # Blog Post
-https://codeeverywhere.ca/post.php?id=73#Weekend-Project:-Online-Code-Editor
+https://codeeverywhere.ca/post.php?id=73&title=Weekend-Project:-Online-Code-Editor
 
 # Live URL
 https://editor.codeeverywhere.ca
 
 # Support
 Find this useful? consider supporting the project BTC 19u6CWTxH4cH9V2yTfAemA7gmmh7rANgiv
+
+# Changelog
+
+Dec 28th
+- Release 1.0 (Build 22122815)

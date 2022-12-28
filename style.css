@@ -1,0 +1,231 @@
+/*
+* js code editor (Dec 28 2020 - 22122815)
+* https://github.com/codeeverywhereca/codeeditor
+* Copyright 2022, https://codeeverywhere.ca
+* Licensed under the MIT license.
+* Support this project, BTC 19u6CWTxH4cH9V2yTfAemA7gmmh7rANgiv
+*/
+
+*,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: #a3a3a3;
+  margin: 10px;
+  text-align: right;
+}
+
+body {
+  background-color: #1e1e1e;
+}
+
+.content {
+  display: flex;
+}
+
+#header {
+  height: 6vh;
+}
+
+#header span {
+  margin: 8px;
+  color: #fff;
+  font-size: 26px;
+  text-transform: capitalize;
+}
+
+@media only screen and (max-width: 1200px) {
+  #header span {
+    display: none;
+  }
+}
+
+.actions {
+  display: inline-block;
+  margin: 8px;
+}
+
+.actions div {
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 15px;
+  padding: 5px 8px;
+  background: rgb(132, 132, 132);
+  border-radius: 5px;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.actions #compiling,
+.actions #auto-save {
+  min-width: 110px;
+}
+
+.actions .btn {
+  cursor: pointer;
+  background: #1e1e1e;
+  border: 1px solid rgb(187, 187, 187);
+  color: rgb(187, 187, 187);
+}
+.actions .btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.actions a {
+  margin-left: 10px;
+  padding: 5px 4px;
+  font-size: 22px;
+  color: #41b1fb;
+}
+
+.editor,
+.output {
+  display: inline-block;
+  height: 94vh;
+  overflow-y: auto;
+}
+
+.editor {
+  flex-basis: 65%;
+}
+
+.output {
+  flex-basis: 35%;
+}
+
+.editor {
+  position: relative;
+  background: none;
+}
+
+#console-log,
+#html-stage {
+  color: antiquewhite;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.025);
+  padding: 10px;
+  margin-left: 10px;
+  min-height: 75px;
+}
+
+.console-log {
+  border-bottom: 1px solid #505050;
+  padding: 4px;
+}
+
+#html-stage .empty {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid rgb(129, 129, 129);
+  margin: 15px;
+  border-radius: 4px;
+}
+
+.editor textarea#code,
+#styled {
+  font-family: system-ui;
+  font-size: 20px;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-weight: 400;
+}
+
+.editor textarea#code {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: calc(100% - 50px);
+  min-height: 150px;
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.025);
+  background: rgba(255, 255, 255, 0.025);
+  caret-color: #fff;
+  z-index: 999;
+}
+
+.lines {
+  font-size: 20px;
+  text-align: right;
+  width: 40px;
+  padding-right: 10px;
+  color: #575757;
+}
+
+#styled {
+  overflow: hidden;
+  width: calc(100% - 50px);
+  position: absolute;
+  top: 0px;
+  left: 50px;
+  background: none;
+  z-index: -999;
+
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+::-webkit-scrollbar-button:single-button {
+  background-color: rgb(223, 223, 223);
+}
+
+::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(88, 88, 88);
+}
+
+#styled {
+  color: #aadafa;
+}
+
+#styled span[data-token-def] {
+  color: #41b1fb;
+}
+
+[data-token-action] {
+  color: #bc89bd;
+}
+
+#styled span[data-token-num] {
+  color: #b5c8a6;
+}
+
+#styled span[data-token-str] {
+  color: #c5947c;
+}
+
+#styled span[data-token-comment] {
+  color: #74985d;
+}
+
+#styled span[data-token-brace] {
+  color: #c95ccf;
+}
+
+#styled span[data-token-method] {
+  color: #dcdcaf;
+}
+
+[data-infi] {
+  border: 1px solid rgb(255, 119, 0);
+  padding: 10px;
+  margin: 5px 0 5px 0;
+  border-radius: 4px;
+}
+
+[data-error] {
+  font-size: 24px;
+  color: rgb(217, 31, 31);
+  margin: 10px;
+  border: 1px solid rgb(217, 31, 31);
+  padding: 10px;
+  border-radius: 4px;
+}

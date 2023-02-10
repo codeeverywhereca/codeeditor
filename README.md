@@ -8,6 +8,9 @@ JavaScript Online Code Editor
 - Infinite loop prevention
 - Code sharing link
 
+# UI
+![editor](https://codeeverywhere.ca/uploads/code-editor-3.png)
+
 # Blog Post
 https://codeeverywhere.ca/post.php?id=73&title=Weekend-Project:-Online-Code-Editor
 
